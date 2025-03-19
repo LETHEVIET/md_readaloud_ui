@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Test Page</title>
+    <link href="/src/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/test.tsx"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Give React a moment to render components
+            setTimeout(() => {
+                document.querySelectorAll('.sent').forEach((el, index) => {
+                    el.style.backgroundColor = index % 2 === 0 ? 'lightblue' : 'lightcoral';
+                });
+                console.log('Background colors applied to sentences');
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
